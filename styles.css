@@ -1,0 +1,96 @@
+/** Ogólne style **/
+
+html {
+    font-size: 100%;
+	font-family: 'Droid Sans', sans-serif;
+}
+
+header{
+	padding: 5px 10px;
+	position: fixed;
+	-webkit-box-shadow:  2px 2px 4px 0px #9B9B9B;    
+    box-shadow:  2px 2px 4px 0px #9B9B9B;
+}
+
+section#articles,
+footer{
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+h1, .alpha,
+h2, .beta{
+    font-weight: bold;
+    margin: 0;
+}
+
+h1{
+    font-size: 3em;
+    line-height: 1;
+    margin-bottom: 0.5em;
+}
+
+h2{
+    font-size: 2.25em;
+    line-height: 1.3333333333333333;
+    margin-bottom: 0.6666666666666666em;
+}
+
+p{
+    font-size: 1em;
+    margin: 0 0 1.5em;
+    line-height: 1.5;
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+}
+
+a{
+	text-decoration: none;
+	color: #38933E;
+}
+
+a:hover{
+	color: #15721B;
+}
+
+
+/** Liczniki **/
+
+body{
+	counter-reset: headers1;
+	counter-reset: headers2;
+	counter-reset: paragraphs;
+	counter-reset: figures;
+}
+article{
+	counter-increment: headers1;
+}
+h1{
+	counter-reset: paragraphs;
+}
+h1:before{
+	content: counter(headers1, upper-roman) ". ";
+}
+h2{
+	counter-increment: headers2;
+}
+h2:before{
+	content: counter(headers1) "." counter(headers2) ". ";
+}
+section#articles p{
+	counter-increment: paragraphs;
+}
+section#articles p:before{
+	content: counter(paragraphs) ". ";
+	font-weight: bold;
+}
+figure{
+	counter-increment: figures;
+	float: right;
+	margin-left: 10px;
+}
+figcaption:before{
+	content: "Zdj. " counter(figures) ". ";
+}
