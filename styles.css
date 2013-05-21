@@ -10,12 +10,18 @@ header{
 	position: fixed;
 	-webkit-box-shadow:  2px 2px 4px 0px #9B9B9B;    
     box-shadow:  2px 2px 4px 0px #9B9B9B;
+	background: white;
+	top: 0;
 }
 
 section#articles,
 footer{
 	max-width: 600px;
 	margin: 0 auto;
+}
+
+section#articles{
+	margin-top: 48px;
 }
 
 h1, .alpha,
